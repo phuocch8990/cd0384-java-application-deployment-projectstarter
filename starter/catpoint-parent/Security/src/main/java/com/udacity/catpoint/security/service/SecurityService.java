@@ -55,9 +55,10 @@ public class SecurityService {
             if (armingStatus == ArmingStatus.ARMED_HOME) {
                 setAlarmStatus(AlarmStatus.ALARM);
             }
-            securityRepository.setArmingStatus(armingStatus);
-            statusListeners.forEach(StatusListener::sensorStatusChanged);
         }
+        securityRepository.setArmingStatus(armingStatus);
+        statusListeners.forEach(StatusListener::sensorStatusChanged);
+
     }
 
     /**
